@@ -10,6 +10,15 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_with @post do |format|
+      format.pdf {
+        pdf = Prawn::Document.new
+        pdf.styled_text @post.content, {margin_bottom: 6}
+        send_data pdf.render_file, filename: "test.pdf",
+                              disposition: 'inline',
+                              type: 'application/pdf'
+      }
+    end
   end
 
   # GET /posts/new
