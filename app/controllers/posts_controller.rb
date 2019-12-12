@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # respond_to :html, :json, :pdf
 
   # GET /posts
   # GET /posts.json
@@ -13,8 +14,8 @@ class PostsController < ApplicationController
     respond_with @post do |format|
       format.pdf {
         pdf = Prawn::Document.new
-        pdf.styled_text @post.content, {margin_bottom: 6}
-        send_data pdf.render_file, filename: "test.pdf",
+        pdf.styled_text @post.content.to_s, {margin_bottom: 6}
+        send_data pdf.render, filename: "test.pdf",
                               disposition: 'inline',
                               type: 'application/pdf'
       }
