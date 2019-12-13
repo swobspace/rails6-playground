@@ -21,6 +21,13 @@
     <%= form.rich_text_area :content %>
   </div>
 
+  <div class="row form-group">
+    <label for="description">Description</label>
+    <input name="posts_description" type="hidden">
+    <div class="quill-editor" id="posts_description_container">
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
