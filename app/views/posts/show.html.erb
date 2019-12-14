@@ -12,8 +12,10 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @post.description.html_safe %>
 </p>
+<div>
+  <%= @post.description.html_safe %>
+</div>
 
 <%= link_to 'PDF', post_path(@post, format: :pdf) %> |
 <%= link_to 'Edit', edit_post_path(@post) %> |
