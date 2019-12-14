@@ -21,10 +21,10 @@
     <%= form.rich_text_area :content %>
   </div>
 
-  <div class="row form-group">
+  <div class="field">
     <label for="description">Description</label>
-    <input name="posts_description" type="hidden">
-    <div class="quill-editor" id="posts_description_container">
+    <input id="post_description" name="post[description]" value="<%= @post.description %>" type="hidden">
+    <trix-editor input="post_description"></trix-editor>
     </div>
   </div>
 
