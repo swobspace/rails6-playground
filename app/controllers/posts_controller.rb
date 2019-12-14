@@ -15,6 +15,7 @@ class PostsController < ApplicationController
       format.pdf {
         pdf = Prawn::Document.new
         pdf.styled_text @post.content.to_s, {margin_bottom: 6}
+        pdf.styled_text @post.description.to_s, {margin_bottom: 6}
         send_data pdf.render, filename: "test.pdf",
                               disposition: 'inline',
                               type: 'application/pdf'
@@ -79,6 +80,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :description)
     end
 end
