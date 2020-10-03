@@ -2,7 +2,12 @@
 
 <h1>Tasks</h1>
 
-<table id="tasks" class="table table-striped" role="datatable">
+<div data-controller="hello">
+  <div data-target="hello.output"></div>
+</div>
+
+<div data-controller="datatables">
+<table id="tasks" class="table table-striped" role="datatable" data-target="datatables.datatable">
   <thead>
     <tr>
       <th>Start</th>
@@ -27,6 +32,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
