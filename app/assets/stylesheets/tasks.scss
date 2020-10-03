@@ -1,3 +1,27 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// --- colors
+$mh-blue: #0063ad;
+$colors: (
+  "blue": $mh-blue
+);
+$theme-colors: (
+  "primary": $mh-blue,
+  "custom": $mh-blue
+);
+$table-accent-bg: #f8f9fa;
+
+// @import "custom-colors";
+
+// --- bootstrap
+// $icon-font-path: "bootstrap/assets/fonts/bootstrap/";
+@import "bootstrap/scss/bootstrap";
+// @import "wobapphelpers/breadcrumbs";
+
+
+body {
+  padding-top: 60px;
+}
+
