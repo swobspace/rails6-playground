@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## creating fake tasks for playing around
 
-Things you may want to cover:
+```ruby
+(1..100).each do |idx|
+  Task.create(
+    start: Faker::Date.between(from: '2020-01-01', to: '2020-12-31'),
+    deadline: Faker::Date.between(from: '2021-01-01', to: '2021-12-31'),
+    subject: Faker::Lorem.sentence,
+    responsible: Faker::Name.name,
+  )
+end
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
